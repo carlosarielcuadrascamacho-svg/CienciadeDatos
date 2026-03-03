@@ -30,8 +30,9 @@ df = df.dropna()
 
 print(df.to_string())
 
-X = df.drop('Ventas', axis=1)
-y = df['Ventas'] 
+X = df.drop('Ventas', axis=1) #Es todo el dataframe menos ventas
+X = df.drop('Campaña_Marketing', axis=1) #Es todo el dataframe menos ventas y ,marketing
+y = df['Ventas'] #Es la columna ventas
 
 slr = LinearRegression() 
 slr.fit(X,y)

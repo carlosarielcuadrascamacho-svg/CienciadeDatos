@@ -37,8 +37,9 @@ df = df.dropna()
 print(df.to_string())
 
 # Dividir el dataset en X y
-X = df.drop('Ventas', axis=1) #Es todo el dataframe menos ventas
 y = df['Ventas'] #Es la columna ventas
+df = df.drop('Ventas', axis=1) #Es todo el dataframe menos ventas
+X = df.drop('Campaña_Marketing', axis=1) #Es todo el dataframe menos ventas y ,marke
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=40)
 
